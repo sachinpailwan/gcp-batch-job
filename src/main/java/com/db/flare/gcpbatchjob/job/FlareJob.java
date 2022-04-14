@@ -33,12 +33,13 @@ public class FlareJob {
 
     @Bean
     @StepScope
-    public Resource resource(@Value("${input-file}") String fileName) throws MalformedURLException {
+    public Resource resource(@Value("#{jobParameters['input-file']}") String fileName) throws MalformedURLException {
         return new UrlResource(fileName);
     }
 
-    @Bean
 
+
+    @Bean
     public FlatFileItemReader<Payment> itemReader(Resource resource)  {
         return new FlatFileItemReaderBuilder<Payment>()
                 .name("personItemReader")
