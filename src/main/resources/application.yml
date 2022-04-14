@@ -1,0 +1,8 @@
+spring:
+  batch:
+    job.enabled: false
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    database-platform: org.hibernate.dialect.H2Dialect
+input-file: file:///d:/work//gcp-batch-job//gcp-batch-job//src//main//resources//payment.csv
